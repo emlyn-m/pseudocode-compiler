@@ -1,0 +1,175 @@
+:root {
+	--bg: #000;
+	--accent: #fff;
+	--ide-bg: #111;
+	--ide-font-size: 2vmin;
+}
+
+* { /* Reset styling */
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: var(--bg);
+}
+
+#header-div {
+	display: flex;
+	flex-direction: row;
+	gap: 5vmax;
+	height: 15vmin;
+	border-bottom: 1px solid var(--accent);
+	padding: 2vmin;
+}
+
+#header-div > span {
+	display: inline-flex;
+	font-family: monospace;
+	color: var(--accent);
+	font-size: 7vmin;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	left: calc((15vmin - 5vmin) / 2);
+  	align-items: center;
+}
+
+#header-div > span #header-div > img {
+	cursor: pointer; /* Clicky bc links */
+}
+
+#links {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 2vw;
+	gap: 2vmax;
+}
+
+#links > span {
+	display: none;
+	color: var(--accent);
+	font-size: 3vmin;
+	position: relative;
+	font-family: monospace;
+}
+
+#links > img {
+	display: inline;
+	height: auto;
+	width: 100%;
+	max-width: calc(.75 * 13.8vmin);
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+
+@media only screen and (orientation: landscape) {
+	#links > span {
+		display: inline-block;
+	}
+
+	#links > img {
+		display: none;
+	}
+}
+
+#content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 2vmax;
+	gap: 2vmax;
+}
+
+#content > div {
+	flex: 1 1 auto;
+}
+
+#content > div > div {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#ide {
+	display: flex;
+	width: 70vmin;
+	height: 70vmin;
+	background-color: var(--ide-bg);
+	overflow-x: auto;
+}
+
+#ide > img {
+	position: absolute;
+	right: .5vmax;
+	bottom: .5vmax;
+}
+
+#line-no {
+	display: inline-block;
+	color: var(--accent);
+	font-size: var(--ide-font-size);
+	font-family: monospace;
+	height: calc(100% - 2vmin);
+	margin: .5vmin;
+	margin-left: .5vw;
+	margin-right: 2vw;
+
+}
+
+#code {
+	display: inline-block;
+	flex: 1 1 auto;
+	padding: .5vmin;
+	font-size: var(--ide-font-size);
+}
+
+#code > span {
+	display: block;
+	font-family: monospace;
+	color: var(--accent);
+	white-space: nowrap;
+}
+
+#marking {
+	width: 70vmin;
+	height: 70vmin;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+#marking > p {
+	display: inline-block;
+	height: 3vmax;
+	color: var(--accent);
+	font-family: monospace;
+	text-align: center;
+	font-size: 2vmax;
+	border: .1vmin solid cyan;
+	padding: .75vmax 1.25vmax .25vmax 1.25vmax;
+}
+
+#marking > div {
+	flex: 1 1 auto;
+	width: calc(50% - 3vmax);
+	height: calc(100%  - 7vmax);
+	margin: 1vmax;
+	border: .1vmin dashed cyan;
+}
+
+#marking > div > input {
+	padding: .5vmax 1vmax .5vmax 1vmax;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	width: calc(100% - 2vmax);
+	color: var(--accent);
+	font-family: monospace;
+	font-size: 1vmax;
+	border-bottom: .05vmin solid var(--accent);
+}

@@ -101,10 +101,18 @@ body {
 	overflow-x: auto;
 }
 
-#ide > img {
+.content-container {
+	position: relative; /* position to ensure cam img is positioned rel to this */
+}
+
+.content-container > img {
+	height: 2vmax;
+	width: 2vmax;
 	position: absolute;
-	right: .5vmax;
-	bottom: .5vmax;
+	left: calc(50% + 35vmin);
+	margin-left: -3vmax;
+	bottom: 1vmax;
+	border: 1px solid pink;
 }
 
 #line-no {

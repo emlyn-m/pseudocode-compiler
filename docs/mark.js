@@ -40,9 +40,11 @@ function testDataInput(elem) {
 			//Create new (in both cols)
 			for (rowElem in allInRow) {
 				if (isNaN(rowElem)) { continue; }
-				console.log("bleh");
-				$(allInRow[rowElem]).clone().attr('class', 'testData-'+(classIdx+1)).insertAfter($(allInRow[rowElem]));
+				$(allInRow[rowElem]).clone().attr('class', 'testData-'+(classIdx+1)).val("").insertAfter($(allInRow[rowElem]));
 			}
 		}
 	}
 }
+
+//TODO: On enter, move to next element
+//TODO: On delete, change focus to prior element

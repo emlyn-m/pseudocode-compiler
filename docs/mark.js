@@ -48,3 +48,14 @@ function testDataInput(elem) {
 
 //TODO: On enter, move to next element
 //TODO: On delete, change focus to prior element
+
+
+
+function uploadFile(event) {
+	// TODO: This
+	event.stopPropagation();
+}
+
+function submit(event) {
+	//TODO: This
+}

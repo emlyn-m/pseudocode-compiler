@@ -33,7 +33,12 @@
 						<span>ENDFUNCTION</span>
 					</div>
 				</div>
-				<img src="cam_icon" />
+				<div id="ide-icon-stack">
+					<img src="pseudocode-icon" />
+					<img src="c++-icon" />
+					<img style="visibility:hidden"/> <!-- FILLER -->
+					<img src="cam-icon" />
+				</div>
 			</div>
 
 			<div class="content-container">
@@ -45,7 +50,7 @@
 					<div> <!-- OUTPUT -->
 						<input type="text" class="testData-1" placeholder="Input data: " oninput="testDataInput($(this))"></input>
 					</div>
-					<p>MARK</p>
+					<p onclick="submit(event)">MARK <img onclick="uploadFile(event)" src="assets/upload.png" /> </p>
 
 				</div>
 			</div>

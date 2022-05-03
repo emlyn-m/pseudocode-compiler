@@ -1,8 +1,9 @@
 :root {
 	--bg: #000;
-	--accent: #fff;
+	--white: #fff;
 	--ide-bg: #111;
 	--ide-font-size: 2vmin;
+	--accent: cyan;
 }
 
 * { /* Reset styling */
@@ -12,6 +13,8 @@
 
 body {
 	background: var(--bg);
+	display: flex;
+	flex-direction: column;
 }
 
 #header-div {
@@ -19,14 +22,14 @@ body {
 	flex-direction: row;
 	gap: 5vmax;
 	height: 15vmin;
-	border-bottom: 1px solid var(--accent);
+	border-bottom: 1px solid var(--white);
 	padding: 2vmin;
 }
 
 #header-div > span {
 	display: inline-flex;
 	font-family: monospace;
-	color: var(--accent);
+	color: var(--white);
 	font-size: 7vmin;
 	position: relative;
 	top: 50%;
@@ -50,7 +53,7 @@ body {
 
 #links > span {
 	display: none;
-	color: var(--accent);
+	color: var(--white);
 	font-size: 3vmin;
 	position: relative;
 	font-family: monospace;
@@ -73,51 +76,39 @@ body {
 	#links > img {
 		display: none;
 	}
+
+	.content-container {
+		max-width: 50%;
+	}
 }
 
 #content {
 	display: flex;
+	height: calc(100vh - 15vmin - 8vmax);
 	flex-direction: row;
 	flex-wrap: wrap;
 	padding: 2vmax;
 	gap: 2vmax;
 }
 
-#content > div {
-	flex: 1 1 auto;
-}
-
-#content > div > div {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
 #ide {
 	display: flex;
-	width: 70vmin;
-	height: 70vmin;
 	background-color: var(--ide-bg);
 	overflow-x: auto;
+	height: 100%;
+	max-width: calc(100% - 4vmax);
 }
 
 .content-container {
 	position: relative; /* position to ensure cam img is positioned rel to this */
-}
+	flex: 1 1 auto;
 
-.content-container > img {
-	height: 2vmax;
-	width: 2vmax;
-	position: absolute;
-	left: calc(50% + 35vmin);
-	margin-left: -3vmax;
-	bottom: 1vmax;
-	border: 1px solid pink;
 }
 
 #line-no {
 	display: inline-block;
-	color: var(--accent);
+	width: 1vw;
+	color: var(--white);
 	font-size: var(--ide-font-size);
 	font-family: monospace;
 	height: calc(100% - 2vmin);
@@ -132,42 +123,75 @@ body {
 	flex: 1 1 auto;
 	padding: .5vmin;
 	font-size: var(--ide-font-size);
+	float: left;
 }
 
 #code > span {
 	display: block;
 	font-family: monospace;
-	color: var(--accent);
+	color: var(--white);
 	white-space: nowrap;
 }
 
+#ide-icon-stack {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3vmax;
+	padding: .5vmax;
+	height: 100%;
+	overflow-y: auto;
+}
+
+#ide-icon-stack > img {
+	width: 3vmax;
+	height: 3vmax;
+	-o-object-fit: contain;
+	   object-fit: contain;
+}
+
 #marking {
-	width: 70vmin;
-	height: 70vmin;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-end;
 	justify-content: center;
+	height: 100%;
 }
 
 #marking > p {
 	display: inline-block;
+	width: 100%;
 	height: 3vmax;
-	color: var(--accent);
+	color: var(--white);
 	font-family: monospace;
 	text-align: center;
 	font-size: 2vmax;
-	border: .1vmin solid cyan;
+	border: .1vmin solid var(--accent);
 	padding: .75vmax 1.25vmax .25vmax 1.25vmax;
+	margin: 0 1vmax 0 1vmax;
+	cursor: pointer;
+	position: relative;
+}
+
+#marking > p > img{
+	width: 2.5vmax;
+	height: 2.5vmax;
+	position: absolute;
+	right: 0vmax;
+	top: 0vmax;
+	padding: .75vmax;
+	border-left: 1px solid var(--accent);
+	-o-object-fit: contain;
+	   object-fit: contain; /* Preserve icon aspect ratio */
 }
 
 #marking > div {
 	flex: 1 1 auto;
 	width: calc(50% - 3vmax);
 	height: calc(100%  - 7vmax);
+	border: 1px dashed var(--accent);
 	margin: 1vmax;
-	border: .1vmin dashed cyan;
 	overflow-y: auto;
 }
 
@@ -177,8 +201,8 @@ body {
 	border: none;
 	outline: none;
 	width: calc(100% - 2vmax);
-	color: var(--accent);
+	color: var(--white);
 	font-family: monospace;
 	font-size: 1vmax;
-	border-bottom: .05vmin solid var(--accent);
+	border-bottom: .05vmin solid var(--white);
 }

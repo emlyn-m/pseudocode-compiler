@@ -57,10 +57,12 @@ body {
 	font-size: 3vmin;
 	position: relative;
 	font-family: monospace;
+    cursor: pointer;
 }
 
 #links > img {
 	display: inline;
+    cursor: pointer;
 	height: auto;
 	width: 100%;
 	max-width: calc(.75 * 13.8vmin);
